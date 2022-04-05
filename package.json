@@ -8,11 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.10",
+    "@fontsource/akaya-telivigala": "^4.5.5",
+    "@fontsource/sora": "^4.5.5",
     "gsap": "^3.9.1",
+    "next": "12.0.10",
     "normalize.css": "^8.0.1",
-    "react-confetti": "^6.0.1",
     "react": "^17.0.2",
+    "react-confetti": "^6.0.1",
     "react-dom": "17.0.2",
     "react-use": "^17.3.2",
     "styled-components": "^5.3.3",
