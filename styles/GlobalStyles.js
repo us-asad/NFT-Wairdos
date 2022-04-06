@@ -8,6 +8,11 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
+  *::selection {
+    background: #000;
+    color: #fff;
+  }
+
   body {
     font-family: "Sora", sans-serif;
     overflow-x: hidden

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay, EffectCards } from "swiper"
+import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -93,40 +93,40 @@ const Container = styled.div`
       width: 2rem;
     }
   }
-`
+`;
 
-export default function Carousel() {
-  return (
-    <Container>
-      <Swiper
-        autoplay={{
-            delay:2000,
-            disableOnInteraction:false,
-        }}
-        pagination={{
-            type:'fraction',
-        }}
-        scrollbar={{
-            draggable:true
-        }}
-        modules={[EffectCards,Pagination, Navigation, Autoplay]}
-        navigation={true}
-        effect={"cards"}
-        grabCursor={true}
-        
-        className="mySwiper"
-      >
-        {[...Array(11)].map((_,index) => (
-          <SwiperSlide key={`swiper_slide${index}`}>
-            <Image
-              src={`/nfts/bighead-${index + 1}.svg`}
-              alt="nft collect"
-              width={500}
-              height={400}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Container>
-  );
-}
+const Carousel = () => (
+  <Container>
+    <Swiper
+      autoplay={{
+          delay:2000,
+          disableOnInteraction:false,
+      }}
+      pagination={{
+          type:'fraction',
+      }}
+      scrollbar={{
+          draggable:true
+      }}
+      modules={[EffectCards,Pagination, Navigation, Autoplay]}
+      navigation={true}
+      effect={"cards"}
+      grabCursor={true}
+      
+      className="mySwiper"
+    >
+      {[...Array(11)].map((_,index) => (
+        <SwiperSlide key={`swiper_slide${index}`}>
+          <Image
+            src={`/nfts/bighead-${index + 1}.svg`}
+            alt="nft collect"
+            width={500}
+            height={400}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </Container>
+);
+
+export default Carousel;

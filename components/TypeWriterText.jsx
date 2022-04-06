@@ -6,7 +6,7 @@ const Title = styled.h2`
   font-size: ${({theme}) => theme.fontxxl};
   text-transform: capitalize;
   width: 80%;
-  color: ${({theme}) => theme.text};
+  color: #000;
   align-self: flex-start;
 
   span {
@@ -43,7 +43,7 @@ const Title = styled.h2`
 const SubTitle = styled.h3`
   font-size: ${({theme}) => theme.fontlg};
   text-transform: capitalize;
-  color: ${({theme}) => `rgba(${theme.textRgba}, 0.6)`};
+  color: ${({theme}) => `rgba(0, 0, 0, 0.6)`};
   font-weight:600;
   margin-bottom: 1rem;
   width: 80%;
@@ -57,7 +57,7 @@ const SubTitle = styled.h3`
     align-self: center;
     text-align:center;
   }
-`
+`;
 
 const ButtonContainer = styled.div`
   width: 80%;
@@ -71,8 +71,8 @@ const ButtonContainer = styled.div`
       margin: 0 auto;
     }
   }
+`;
 
-`
 const TypeWriterText = () => (
   <>
     <Title>
@@ -99,7 +99,11 @@ const TypeWriterText = () => (
     </Title>
     <SubTitle>Bored Of Apes? Try Something New.</SubTitle>
     <ButtonContainer>
-      <Button text="Explore" link="#about" />
+      <Button
+        color="#fff"
+        text="Explore"
+        link="#about"
+      />
     </ButtonContainer>
   </>
 );

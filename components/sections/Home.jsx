@@ -5,8 +5,8 @@ const Section = styled.section`
   min-height: ${({theme}) => `calc(100vh - ${theme.navHeight})`};
   width: 100vw;
   position: relative;
-  background-color: ${({theme}) => theme.body};
-`
+  background-color: #fff;
+`;
 
 const Container = styled.div`
   width: 75%;
@@ -29,7 +29,7 @@ const Container = styled.div`
       margin-top: 2rem;
     }
   }
-`
+`;
 
 const Box = styled.div`
   width: 50%;
@@ -38,13 +38,13 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const rotateAnimation = keyframes`
   100%{
     transform: rotate(1turn);
   }
-`
+`;
 
 const Round = styled.div`
   position: absolute;
@@ -52,7 +52,7 @@ const Round = styled.div`
   right: 90%;
   width: 6rem;
   height: 6rem;
-  border: 1px solid ${({theme}) => theme.text};
+  border: 1px solid #000;
   border-radius: 50%;
 
   img{
@@ -72,7 +72,7 @@ const Round = styled.div`
   @media (max-width: 48em) {
     right: 1rem;
   }
-`
+`;
 
 const Circle = styled.span`
   width: 3rem;
@@ -85,16 +85,16 @@ const Circle = styled.span`
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: ${({theme}) => theme.text};
-  color: ${({theme}) => theme.body};
+  background-color: #fff;
+  color: #000;
   font-size:${({theme}) => theme.fontxl};
 
   @media (max-width: 64em) {
     width: 2rem;
     height: 2rem;
-    font-size:${({theme}) => theme.fontlg};
+    font-size: ${({theme}) => theme.fontlg};
   }
-`
+`;
 
 const Home = () => (
   <Section id="home">

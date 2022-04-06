@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const Btn = styled.button`
   display: inline-block;
-  background-color: ${({theme}) => theme.text};
-  color: ${({theme}) => theme.body};
+  background-color: ${({color}) => color === "#fff" ? "#000" : "#fff"};
+  color: ${({color}) => color === "#fff" ? "#fff" : "#000"};
   outline: 0;
   border: 0;
   font-size: ${({theme}) => theme.fontsm};
@@ -23,7 +23,7 @@ const Btn = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    border: 2px solid ${({theme}) => theme.text};
+    border: 2px solid ${({color}) => color === "#fff" ? "#000" : "#fff"};
     width: 100%;
     height: 100%;
     border-radius: 50px;
@@ -36,15 +36,15 @@ const Btn = styled.button`
   }
 `;
 
-export default function Button({ text, link }) {
-  return (  
-    <Btn>
-      <a
-        href={link}
-        aria-label={text}
-        target="_blank"
-        rel="noreferrer"
-      >{text}</a>
-    </Btn>
-  );
-}
+const Button = ({ text, link, color }) => (  
+  <Btn color={color}>
+    <a
+      href={link}
+      aria-label={text}
+      target="_blank"
+      rel="noreferrer"
+    >{text}</a>
+  </Btn>
+);
+
+export default Button;

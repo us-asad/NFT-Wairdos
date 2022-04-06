@@ -1,37 +1,11 @@
-import {useState} from 'react'
-import styled from 'styled-components'
+import { useState } from 'react';
+import styled from 'styled-components';
 import { Button, Logo } from "components";
+import { navItems } from "constants";
 
-const navItems = [
-  {
-    name: "Home",
-    url: "#home"
-  },
-    {
-    name: "About",
-    url: "#about"
-  },
-    {
-    name: "Roadmap",
-    url: "#roadmap"
-  },
-    {
-    name: "Showcase",
-    url: "#showcase"
-  },
-    {
-    name: "Team",
-    url: "#team"
-  },
-    {
-    name: "Faq",
-    url: "#faq"
-  }
-];
-
-const Section = styled.section`
+const Header = styled.header`
   width: 100vw;
-  background-color: ${({theme}) => theme.body};
+  background-color: #fff;
 `;
 
 const NavBar = styled.nav`
@@ -71,9 +45,9 @@ const Menu = styled.ul`
     right: 0;
     bottom: 0;
     width: 100vw;
-    height: ${({theme}) => `calc(100vh - $ theme.navHeight})`};
+    height: ${({theme}) => `calc(100vh - ${theme.navHeight})`};
     z-index:50;
-    background-color: ${({theme}) => `rgba($ theme.bodyRgba},0.85)`};
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(2px);
 
     transform: ${({click}) => click ? 'translateY(0)' : `translateY(1000%)`};
@@ -87,7 +61,7 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   margin: 0 1rem;
-  color: ${({theme}) => theme.text};
+  color: #000;
   cursor: pointer;
 
   &::after{
@@ -95,7 +69,7 @@ const MenuItem = styled.li`
     display: block;
     width: 0%;
     height: 2px;
-    background: ${({theme}) => theme.text};
+    background: #000;
     transition: width 0.3s ease;
   }
 
@@ -115,7 +89,7 @@ const MenuItem = styled.li`
 const HamburgerMenu = styled.span`
   width:  ${({click}) => click ? '2rem' : '1.5rem'};
   height: 2px;
-  background: ${({theme}) => theme.text};
+  background: #000;
   position: absolute;
   top: 2rem;
   left: 50%;
@@ -135,7 +109,7 @@ const HamburgerMenu = styled.span`
     width:  ${({click}) => click ? '1rem' : '1.5rem'};
     height: 2px;
     right: ${({click}) => click ? '-2px' : '0'};
-    background: ${({theme}) => theme.text};
+    background: #000;
     position: absolute;
     transition: all 0.3s ease;
   }
@@ -151,7 +125,7 @@ const HamburgerMenu = styled.span`
   }
 `;
 
-export default function Header() {
+export default function HeaderComponent() {
   const [click, setClick] = useState(false);
   
   const scrollTo = id => {
@@ -167,22 +141,30 @@ export default function Header() {
   }
 
   return (
-    <Section id="navbar">
+    <Header id="header">
       <NavBar>
         <Logo />
-        <HamburgerMenu click={click}  onClick={() => setClick(!click)}>&nbsp;</HamburgerMenu>
+        <HamburgerMenu click={click} onClick={() => setClick(!click)}>&nbsp;</HamburgerMenu>
         <Menu click={click}>
-          {navItems.map(({name, url}) => <MenuItem key={url} onClick={() => scrollTo(url)}>{name}</MenuItem>)}
+          {navItems?.map(({name, url}) => <MenuItem key={url} onClick={() => scrollTo(url)}>{name}</MenuItem>)}
           <MenuItem>
             <div className="mobile">
-              <Button text="Connect Wallet" link="https://google.com" />
+              <Button
+                color="#fff"
+                text="Connect Wallet"
+                link="https://google.com"
+              />
             </div>
           </MenuItem>
         </Menu>
         <div className="desktop">
-          <Button text="Connect Wallet" link="https://google.com" />
+          <Button
+            color="#fff"
+            text="Connect Wallet"
+            link="https://google.com"
+          />
         </div>
       </NavBar>
-    </Section>
+    </Header>
   );
 }

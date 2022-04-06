@@ -4,7 +4,7 @@ import styled from "styled-components";
 const LogoText = styled.h2`
   font-family: 'Akaya Telivigala', cursive;
   font-size: ${({theme}) => theme.fontxxxl};
-  color: ${({theme}) => theme.text};
+  color: #000;
   transition: all 0.2s ease;
 
   &:hover{
@@ -16,12 +16,12 @@ const LogoText = styled.h2`
   }
 `;
 
-export default function Logo() {
-  return (  
-    <LogoText>
-      <Link href="/">
-        <a>W.</a>
-      </Link>
-    </LogoText >
-  );
-}
+const Logo = () => (  
+  <LogoText>
+    <Link href="/">
+      <a>W.</a>
+    </Link>
+  </LogoText >
+);
+
+export default Logo;
