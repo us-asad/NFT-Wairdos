@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 import styled from "styled-components";
@@ -117,7 +116,7 @@ const Carousel = () => (
     >
       {[...Array(11)].map((_,index) => (
         <SwiperSlide key={`swiper_slide${index}`}>
-          <Image
+          <img
             src={`/nfts/bighead-${index + 1}.svg`}
             alt="nft collect"
             width={500}
